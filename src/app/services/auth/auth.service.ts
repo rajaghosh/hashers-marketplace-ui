@@ -1,38 +1,53 @@
-// import { Injectable } from '@angular/core';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class AuthService {
-
-//   constructor() { }
-// }
-
-
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
-  private isAuthenticated = false;
+  // constructor(private http: HttpClient, private router:Router) { }
 
-  login(username: string, password: string): boolean {
-    // Implement login logic
-    this.isAuthenticated = true;
-    return this.isAuthenticated;
+  constructor(private router:Router) { }
+
+  SaveToken(token: string, userDetails: string) {
+    localStorage.removeItem("token");
+    localStorage.setItem("token", token);
+
+    localStorage.removeItem("userKey");
+    localStorage.setItem("userKey",userDetails);
   }
 
-  register(username: string, password: string): boolean {
-    // Implement registration logic
-    return true;
+  GetToken() {
+    return localStorage.getItem("token") || '';
   }
 
-  logout(): void {
-    this.isAuthenticated = false;
+  GetUserKey(){
+    return localStorage.getItem("userKey") || '';
   }
 
-  isLoggedIn(): boolean {
-    return this.isAuthenticated;
+  LogOut() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userKey");
+    localStorage.removeItem("loggedUser");
+    localStorage.removeItem("type");
+    
+    this.router.navigate(["/login"]);
   }
+
+  IsLoggedIn() {
+    // return localStorage.getItem("token") != null;
+    var check = (localStorage.getItem("token") != null) && (localStorage.getItem("userKey") != null);
+    return check;
+
+  }
+
+
+
 }
