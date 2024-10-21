@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { CommonModule, DatePipe } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { FormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +11,17 @@ import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialuiModule } from './materialui.module';
+
+// import { MatFormFieldModule } from '@angular/material/form-field';
+// import { MatInputModule } from '@angular/material/input';
+// import { MatDialogModule } from '@angular/material/dialog';
+// import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+// import { MatCheckboxModule } from '@angular/material/checkbox';
+// import { MatButtonModule } from '@angular/material/button';
+// import { MatIconModule } from '@angular/material/icon';
+// import {MatSelectModule} from '@angular/material/select';
+
+// import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddComponent } from './components/item/add/add.component';
@@ -27,6 +39,7 @@ import { UserService } from './services/http-services/user.service';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from './services/auth/token-interceptor.service';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +51,8 @@ import { TokenInterceptorService } from './services/auth/token-interceptor.servi
     DetailComponent,
     HeaderComponent,
     FooterComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -46,11 +60,18 @@ import { TokenInterceptorService } from './services/auth/token-interceptor.servi
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialuiModule,
+    // MatFormFieldModule,
+    // MatDialogModule,
+    // MatProgressSpinnerModule,
+    // MatCheckboxModule,
+    // MatButtonModule,
+    // MatInputModule,
+    // MatIconModule,
+    // MatSelectModule,
+
     HttpClientModule,
-    MaterialuiModule,
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
+    // FormsModule,
   ],
   providers: [
     DatePipe,
@@ -59,6 +80,7 @@ import { TokenInterceptorService } from './services/auth/token-interceptor.servi
     AuthService,
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  // schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

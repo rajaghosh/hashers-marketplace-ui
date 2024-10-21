@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 // import { MatInput, MatFormField, MatButton } from '@angular/material/form-field';
-import { MatFormFieldModule } from '@angular/material/form-field';
+// import { MatFormFieldModule } from '@angular/material/form-field';
 import { UserRegistrationModel } from 'src/app/models/user.model';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../../components/confirm-dialog/confirm-dialog.component';
@@ -15,6 +20,11 @@ import { UserInternalService } from 'src/app/services/common-services/user-inter
 
 @Component({
   selector: 'app-register',
+  // standalone: true,
+  // imports: [CommonModule, ReactiveFormsModule],
+  
+  // standalone: true,
+  // imports: [MatFormFieldModule, MatInputModule, MatSelectModule],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })

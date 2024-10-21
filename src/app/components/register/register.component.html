@@ -2,7 +2,7 @@
 
     <div class="row" *ngIf="userNotLoggedIn">
 
-        <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-12 offset-md-3 offset-lg-3 reg_div" *ngIf="!showLogin">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12 offset-md-3 offset-lg-3 reg_div" *ngIf="!showLogin">
 
             <form [formGroup]="registrationForm">
 
@@ -10,7 +10,7 @@
                     <div class="row h-100 p-2 pb-4 pt-4 p-sm-5 bg-body-tertiary border rounded-3">
 
                         <div class="pt-0">
-                            <h2>Registration</h2>
+                            <h2>Hasher Registration</h2>
                         </div>
 
                         <mat-form-field appearance="fill" class="pt-3">
@@ -76,19 +76,20 @@
 
             </form>
 
-        </div> -->
+        </div>
 
 
-<!-- 
+
         <div class="col-lg-6 col-md-6 col-sm-12 col-12 offset-md-3 offset-lg-3 login_div" *ngIf="showLogin">
 
             <form [formGroup]="loginForm">
 
-                <div class="col-lg-8 col-md-12 col-sm-12 col-12 center-current-content register-portion-vertically-middle">
+                <div
+                    class="col-lg-8 col-md-12 col-sm-12 col-12 center-current-content register-portion-vertically-middle">
                     <div class="row h-100 p-2 pb-4 pt-4 p-sm-5 bg-body-tertiary border rounded-3">
 
                         <div class="pt-0">
-                            <h2>Affiliate Login</h2>
+                            <h2>Hasher Login</h2>
                         </div>
 
                         <mat-form-field appearance="fill" class="pt-3">
@@ -113,8 +114,9 @@
                                 'visibility'}}</mat-icon>
 
                             <mat-error *ngIf="checkErrorLogin('Password', 'required')">Password is required</mat-error>
-                            <mat-error *ngIf="checkErrorLogin('Password', 'maxlength')">Password must not exceed 15 characters</mat-error>
-                            
+                            <mat-error *ngIf="checkErrorLogin('Password', 'maxlength')">Password must not exceed 15
+                                characters</mat-error>
+
                         </mat-form-field>
 
 
@@ -130,7 +132,7 @@
 
                         <div class="row pt-3 mt-4">
                             <div class="col-12">
-                                <a href="javascript:void(0)" (click)="toggleForms()">Create an Affiliate account</a>
+                                <a href="javascript:void(0)" (click)="toggleForms()">Create an Hasher MarketPlace account</a>
                             </div>
                         </div>
 
@@ -140,7 +142,7 @@
 
             </form>
 
-        </div> -->
+        </div>
 
 
     </div>
