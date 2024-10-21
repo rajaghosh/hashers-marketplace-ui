@@ -1,0 +1,19 @@
+<h1>Welcome to Hashers Marketplace</h1>
+
+
+<div *ngFor="let item of items">
+  <h2>{{ item.name }}</h2>
+  <p>{{ item.description }}</p>
+  <p>{{ item.price }}</p>
+  <img [src]="item.image" alt="{{ item.name }}">
+</div>
+
+<!-- <input type="text" placeholder="Search items" (input)="search($event.target.value ? '')">
+<div *ngFor="let item of filteredItems">
+  <h2>{{ item.name }}</h2>
+  <p>{{ item.description }}</p>
+  <p>{{ item.price }}</p>
+  <img [src]="item.image" alt="{{ item.name }}">
+</div> -->
+
+
