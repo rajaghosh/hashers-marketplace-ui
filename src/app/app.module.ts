@@ -12,17 +12,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialuiModule } from './materialui.module';
 
-// import { MatFormFieldModule } from '@angular/material/form-field';
-// import { MatInputModule } from '@angular/material/input';
-// import { MatDialogModule } from '@angular/material/dialog';
-// import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-// import { MatCheckboxModule } from '@angular/material/checkbox';
-// import { MatButtonModule } from '@angular/material/button';
-// import { MatIconModule } from '@angular/material/icon';
-// import {MatSelectModule} from '@angular/material/select';
-
-// import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddComponent } from './components/item/add/add.component';
 import { EditComponent } from './components/item/edit/edit.component';
@@ -60,18 +49,9 @@ import { RegisterComponent } from './components/register/register.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialuiModule,
-    // MatFormFieldModule,
-    // MatDialogModule,
-    // MatProgressSpinnerModule,
-    // MatCheckboxModule,
-    // MatButtonModule,
-    // MatInputModule,
-    // MatIconModule,
-    // MatSelectModule,
 
     HttpClientModule,
     CommonModule,
-    // FormsModule,
   ],
   providers: [
     DatePipe,
@@ -81,6 +61,5 @@ import { RegisterComponent } from './components/register/register.component';
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true },
   ],
   bootstrap: [AppComponent],
-  // schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

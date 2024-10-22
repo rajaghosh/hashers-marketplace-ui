@@ -1,13 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 
-import {MatSelectModule} from '@angular/material/select';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-
-// import { MatInput, MatFormField, MatButton } from '@angular/material/form-field';
-// import { MatFormFieldModule } from '@angular/material/form-field';
 import { UserRegistrationModel } from 'src/app/models/user.model';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../../components/confirm-dialog/confirm-dialog.component';
@@ -15,16 +8,9 @@ import { UserService } from 'src/app/services/http-services/user.service';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { UserInternalService } from 'src/app/services/common-services/user-internal.service';
-// import { TokenService } from '../../service/auth-services/token.service';//'../_services/token-storage.service';
-
 
 @Component({
   selector: 'app-register',
-  // standalone: true,
-  // imports: [CommonModule, ReactiveFormsModule],
-  
-  // standalone: true,
-  // imports: [MatFormFieldModule, MatInputModule, MatSelectModule],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
@@ -40,11 +26,6 @@ export class RegisterComponent implements OnInit {
   currentUrl: string = "";
   imageLoc: string = "../../../assets/images/";
 
-
-  // myForm: FormGroup;
-
-  // registationStatus: boolean = false;
-
   constructor(
     private fBuilder: FormBuilder
     , private dialog: MatDialog
@@ -52,8 +33,6 @@ export class RegisterComponent implements OnInit {
     , private router: Router
     , private authService: AuthService
     , private userInternal: UserInternalService
-    // , private fb: FormBuilder,
-    // , private tokenStorage: TokenService
   ) {
     //If logged in then on load it will redirect to manage product page
     if (localStorage.getItem("loggedUser") !== null) {
@@ -115,11 +94,6 @@ export class RegisterComponent implements OnInit {
       ]),
     });
   }
-
-  // TestSubmit(){
-
-  //   debugger;
-  // }
 
   onRegistrationSubmit() {
 
